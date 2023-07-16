@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home/{{username}}-{{ id }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+      #intro {
+        background-image: url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
+        height: 100vh;
+      }
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #intro {
+          margin-top: -58.59px;
+        }
+      }
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand nav-link" target="_blank" href="#">
+          <strong>TECLA</strong>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" rel="nofollow"
+                target="_blank">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" target="_blank">Services</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="#" rel="nofollow"
+                target="_blank">
+                  user : {{ username }}
+              </a>
+            </li>
+            <li class="nav-item me-3 ms- 2 me-lg-0 mx-auto">
+              <form action="/sign_out/" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">
+                    Sign out
+                </button>
+              </form>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+    <div id="intro" class="bg-image shadow-2-strong">
+      <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-5 col-md-8">
+              <div>
+                <h3>
+                  <label class="form-label" for="" style="color: white;">Welcome back user {{ username }}</label>
+                </h3>
+              </div>
+              <form class="bg-white  rounded-1 shadow-5-strong p-5">
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="text" id="" class="form-control" />
+                  <label class="form-label" for="">write your message </label>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col d-flex justify-content-center">
+                    <!-- Checkbox -->
+                    <div class="form-check">
+                      <button class="btn btn-outline-danger" type="button">
+                        Send to your DB
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
